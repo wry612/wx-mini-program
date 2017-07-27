@@ -1,0 +1,52 @@
+{
+  "pages":[      
+    "pages/index/index",
+    "pages/quotation/quotation",
+    "pages/warning/warning", 
+    "pages/user-account/user-account",
+    "pages/edit-warning/edit-warning",
+    "pages/quotation-details/quotation-details"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor":"#fff",
+    "enablePullDownRefresh":true,
+    "navigationBarBackgroundColor": "#bd4745",
+    "navigationBarTitleText": "普洱微盘",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#bd4745",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "自选",
+      "iconPath": "pages/images/icon-optional.png",
+      "selectedIconPath": "pages/images/icon-optional-active.png"
+    },{
+      "pagePath": "pages/quotation/quotation",
+      "text": "行情",
+      "iconPath": "pages/images/icon-quotation.png",
+      "selectedIconPath": "pages/images/icon-quotation-active.png"
+    }, {
+      "pagePath": "pages/warning/warning",
+      "text": "预警",
+      "iconPath": "pages/images/icon-warning.png",
+      "selectedIconPath": "pages/images/icon-warning-active.png"
+    }, {
+      "pagePath": "pages/user-account/user-account",
+      "text": "我的",
+      "iconPath": "pages/images/icon-user.png",
+      "selectedIconPath": "pages/images/icon-user-active.png"
+    }]  
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "downloadFile": 5000,
+    "connectSocket":5000
+  },
+  "debug": true
+}

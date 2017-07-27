@@ -1,0 +1,107 @@
+<view class="login-section" hidden="{{loginHidden}}">
+    <view class="form-section">
+        <form bindsubmit="formSubmit">
+            <view class="input-item border-no account-item">
+                <input type="text" placeholder="请输入您的登录账号" name="account" class="input account" id="account" />
+            </view>      
+            <view class="input-item password-item">
+                <input type="password" placeholder="请输入您的登录密码" name="password" class="input password" id="password" />       
+            </view>
+            <view class="input-item code-item" hidden="{{checkHidden}}">
+                <input type="number" name="code" class="input code" placeholder="请输入验证码" maxlength="4" /><text class="send-code" bindtap="sendCode" id="sendCode">{{sendCode}}</text>
+            </view>
+            <view class="checkbox-item">
+                <label class="checkbox-label" for="checkbox" bindtap="checkChange" namename="checkbox">
+                    <checkbox value="{{checkbox.name}}" class="checkbox" checked="{{checkbox.checked}}" id="checkbox" />{{checkbox.value}}
+                </label>
+            </view>
+            <view class="button-item" hidden="{{!checkHidden}}">
+                <button class="btn" size="default" formType="submit">{{loginText}}</button>
+            </view>
+            <view class="button-item" hidden="{{checkHidden}}">
+                <button class="btn" size="default" formType="submit">{{bindText}}</button>
+            </view>  
+        </form>
+    </view>
+    <view class="text-center forget-password">
+        <text>{{forgetPassword}}</text>
+    </view> 
+    <view class="text-center number-text">
+        <text bindtap="phoneCall" >{{numberText}}</text>
+    </view> 
+    <view class="copyright">
+    <view><text>{{company}}</text></view> 
+    <view><text>{{copyright}}</text></view> 
+    <view><text>{{rights}}</text></view> 
+    </view>
+</view>
+<view class="user-section" hidden="{{!loginHidden}}" >
+    <view class="funds-section">
+        <view class="funds-box"><text>资产总值</text><text class="funds-item">{{fund.asset_total}}</text></view>
+        <view class="funds-box"><text>藏品市值</text><text class="funds-item">{{fund.stock_total}}</text></view>
+        <view class="funds-box"><text>可用资金</text><text class="funds-item">{{fund.enable_balance}}</text></view>
+        <view class="funds-box"><text>浮动盈亏</text>
+            <text class="funds-item red" wx:if="{{fund.income_balance_total>0}}">{{fund.income_balance_total}}</text>
+            <text class="funds-item" wx:elif="{{fund.income_balance_total==0}}">{{fund.income_balance_total}}</text>
+            <text class="funds-item green" wx:else>{{fund.income_balance_total}}</text>
+        </view>
+    </view>
+    <view class="holding-section show-list">
+		<view class="list-title">
+			<text>我的持仓</text>
+		</view>
+		<view class="holding-wrap">
+			<navigator url="../quotation-details/quotation-details?prodCode={{item.prodCode}}" class="wrap-item" wx:for="{{holding}}" wx:for-index="idx">
+			<view class="clearfix holding-list bt-none">
+				<view class="holding-item first">
+					<view class="holding-title holding-name">
+                        {{item.otc_name}}
+					</view>
+					<view class="holding-data">
+                        {{item.otc_code}}
+					</view>
+				</view>
+				<view class="holding-item seconed">
+					<view class="holding-title">
+						可卖量
+					</view>
+					<view class="holding-data">
+                        {{item.enable_amount}}
+					</view>
+				</view>
+				<!--<view class="holding-item third">
+					<view class="holding-title">
+						现价
+					</view>
+                    <view wx:if="{{item.income_balance>0}}" class="holding-data red">
+                        {{item.last_price}}
+					</view>
+					<view wx:elif="{{item.income_balance<0}}" class="holding-data green">
+                        {{item.last_price}}
+					</view>
+                    <view wx:elif="{{item.income_balance==0}}" class="holding-data">
+                        {{item.last_price}}
+					</view>
+				</view>-->
+				<view class="holding-item fourth">
+					<view class="holding-title">
+						盈亏/盈亏比
+					</view>
+					<view wx:if="{{item.income_balance>0}}" class="holding-data red">
+						<text>{{item.income_balance}}</text><text>/</text><text>{{item.income_balance_ratio}}</text>
+					</view>
+                    <view wx:if="{{item.income_balance<0}}" class="holding-data green">
+						<text>{{item.income_balance}}</text><text>/</text><text>{{item.income_balance_ratio}}</text>
+					</view>
+                    <view wx:if="{{item.income_balance==0}}" class="holding-data">
+						<text>{{item.income_balance}}</text><text>/</text><text>{{item.income_balance_ratio}}</text>
+					</view>
+				</view>
+                <view class="holding-item fifth">
+					<button bindtap="payHolding" type="primary" size="mini" class="pay"  id="{{idx}}">卖出</button>
+				</view>
+			</view>
+			</navigator>
+		</view>
+	</view>
+</view>

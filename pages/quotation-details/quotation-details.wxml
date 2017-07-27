@@ -1,0 +1,109 @@
+<view class="header">
+        <view hidden="{{isZx}}" class="header-choose"  bindtap="changeChoose">
+            <view><image src="../images/icon-choose.png" class="icon-choose" /></view>
+            <view>添加自选</view>
+        </view>
+        <view hidden="{{!isZx}}" class="header-choose" bindtap="changeChoose">
+            <view><image src="../images/icon-remove-choose.png" class="icon-choose" /></view>
+            <view>删除自选</view>
+        </view>
+    <view class="goods-name"><text>{{goodsDetails.prodName}}</text></view>
+    <view class="goods-code"><text>{{goodsDetails.prodCode}}</text></view>
+</view>
+<view class="offer-section">
+    <view class="offer-wrap clearfix">
+        <view class="float-left offer-item red" wx:if="{{goodsDetails.pxChange>0}}" >
+            <view class="price"><text>{{goodsDetails.lastPx}}</text></view>
+            <view class="percent"><text class="mr">{{goodsDetails.pxChange}}</text><text>{{goodsDetails.pxChangeRate}}</text></view>
+        </view>
+        <view class="float-left offer-item" wx:elif="{{goodsDetails.pxChange==0}}" >
+            <view class="price"><text>{{goodsDetails.lastPx}}</text></view>
+            <view class="percent"><text>{{goodsDetails.pxChange}}</text><text>{{goodsDetails.pxChangeRate}}</text></view>
+        </view>
+        <view class="float-left offer-item green" wx:else >
+            <view class="price"><text>{{goodsDetails.lastPx}}</text></view>
+            <view class="percent"><text>{{goodsDetails.pxChange}}</text><text>{{goodsDetails.pxChangeRate}}</text></view>
+        </view>
+        <view class="diviling float-left"></view>
+        <view class="float-left offer-item">
+            <view class="deal-data cjl">成交量：{{goodsDetails.businessAmount}}份</view>
+            <view class="deal-data">成交额：{{goodsDetails.businessBalance}}</view>
+        </view>
+    </view>		
+</view>
+<view class="section quotation-section">
+    <view class="quotation-offer">
+        <view class="clearfix">
+            <view class="quotation-item"><text class="quotation-title">开盘</text><text>{{goodsDetails.openPx}}</text></view>
+            <view class="quotation-item"><text class="quotation-title">收盘</text><text>{{goodsDetails.preclosePx}}</text></view>
+            <view class="quotation-item"><text class="quotation-title">最高</text><text class="red">{{goodsDetails.highPx}}</text></view>
+            <view class="quotation-item"><text class="quotation-title">最低</text><text class="green">{{goodsDetails.lowPx}}</text></view>
+        </view>									
+    </view>
+</view>
+<view class="quotation-tab clearfix">
+    <text class="tab-item {{tab1}}" bindtap="chartChange" id="chartMinute">分时线</text>
+    <text class="tab-item {{tab2}}" bindtap="chartChange" id="chartDay">日K</text>
+    <text class="tab-item {{tab3}}" bindtap="chartChange" id="chartWeek">周K</text>
+    <text class="tab-item {{tab4}}" bindtap="chartChange" id="chartMonth">月K</text>
+</view>
+<view id="chart" class="chart">
+    <image src="../images/chart.jpg" />
+</view>
+<view class="handicap-wrap">
+    <view class="handicap-title">盘口</view>
+    <view class="details-wrap clearfix">
+        <view class="float-left details-box details-left">
+            <view class="clearfix">
+                <text class="float-right red" wx:if="{{goodsDetails.openPx>0}}">{{goodsDetails.openPx}}</text>
+                <text class="float-right" wx:elif="{{goodsDetails.openPx==0}}">{{goodsDetails.openPx}}</text>
+                <text class="float-right green" wx:else>{{goodsDetails.openPx}}</text>
+                <text class="float-left">今开</text>
+            </view>
+            <view class="clearfix">
+                <text class="float-right red" wx:if="{{goodsDetails.upPx>0}}">{{goodsDetails.upPx}}</text>
+                <text class="float-right" wx:elif="{{goodsDetails.upPx==0}}">{{goodsDetails.upPx}}</text>
+                <text class="float-right green" wx:else>{{goodsDetails.upPx}}</text>
+                <text class="float-left">涨停价</text>
+            </view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.businessBalance}}</text><text class="float-left">成交额</text></view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.businessAmountOut}}</text><text class="float-left">外盘</text></view>
+            <view class="clearfix">
+            <text class="float-right red" wx:if="{{goodsDetails.entrustRate>0}}">+{{goodsDetails.entrustRate}}%</text>
+            <text class="float-right" wx:elif="{{goodsDetails.entrustRate==0}}">{{goodsDetails.entrustRate}}%</text>
+            <text class="float-right green" wx:else>{{goodsDetails.entrustRate}}%</text>
+            <text class="float-left">委比</text>
+            </view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.turnoverRatio}}</text><text class="float-left">换手率</text></view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.circulationValue}}</text><text class="float-left">流通市值</text></view>
+        </view>
+        <view class="float-left details-box">
+            <view class="clearfix">
+            <text class="float-right red" wx:if="{{goodsDetails.preclosePx>0}}">{{goodsDetails.preclosePx}}</text>
+            <text class="float-right" wx:elif="{{goodsDetails.preclosePx==0}}">{{goodsDetails.preclosePx}}</text>
+            <text class="float-right green" wx:else>{{goodsDetails.preclosePx}}</text>
+            <text class="float-left">昨收</text>
+            </view>
+            <view class="clearfix">
+            <text class="float-right red" wx:if="{{goodsDetails.downPx>0}}">{{goodsDetails.downPx}}</text>
+            <text class="float-right" wx:elif="{{goodsDetails.downPx==0}}">{{goodsDetails.downPx}}</text>
+            <text class="float-right green" wx:else>{{goodsDetails.downPx}}</text>
+            <text class="float-left">跌停价</text>
+            </view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.businessAmount}}份</text><text class="float-left">成交量</text></view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.businessAmountIn}}</text><text class="float-left">内盘</text></view>
+            <view class="clearfix">
+            <text class="float-right red" wx:if="{{goodsDetails.entrustDiff>0}}">{{goodsDetails.entrustDiff}}</text>
+            <text class="float-right" wx:elif="{{goodsDetails.entrustDiff==0}}">{{goodsDetails.entrustDiff}}</text>
+            <text class="float-right green" wx:else>{{goodsDetails.entrustDiff}}</text>
+            <text class="float-left">委差</text>
+            </view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.volRatio}}</text><text class="float-left">量比</text></view>
+            <view class="clearfix"><text class="float-right">{{goodsDetails.marketValue}}</text><text class="float-left">总市值</text></view>
+        </view>
+    </view>
+</view>
+<view class="clearfix warning-wrap" id="addWarning">
+    <navigator url="../edit-warning/edit-warning" class="btn clearfix float-left"><image src="../images/icon-add.png" class="icon-add" /><text class="float-left">添加预警</text></navigator>
+    <navigator url="../warning/warning" class="btn float-right">我的预警</navigator>
+</view>

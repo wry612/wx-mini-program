@@ -1,0 +1,37 @@
+<view class="warning-section">
+	<view class="warning-goods">
+		<view class="goods-title">
+			<text class="warning-name">预警商品</text><text class="search-id">{{goodsDetails.prodCode}}</text>
+            <text class="warning-name">{{goodsDetails.prodName}}</text>
+		</view>
+		<view class="quotation">
+			<text class="quotation-text ml0">{{goodsDetails.lastPx}}</text><text class="quotation-text">{{goodsDetails.pxChange}}</text>
+            <text class="quotation-text">{{goodsDetails.pxChangeRate}}</text>
+		</view>
+	</view>
+	<view class="edit-wrap">
+		<view class="edit-title clearfix">			
+            <text class="float-left edit-text edit-type">价格高于</text>
+            <input type="number" placeholder="0.00" name="" disabled='{{warningData.lastpxgeState=="off"}}' value="{{warningData.lastpxge}}" class="edit-input"/><text class="float-left edit-text">元</text>
+            <switch checked='{{warningData.lastpxgeState=="on"}}' bindchange="switchChange" class="float-right" />
+		</view>
+		<view class="edit-title clearfix">
+            <text class="float-left edit-text edit-type">价格低于</text>
+            <input type="number" placeholder="0.00" name="" disabled='{{warningData.lastpxleState=="off"}}' value="{{warningData.lastpxle}}" class="edit-input"/><text class="float-left edit-text">元</text>
+            <switch checked='{{warningData.lastpxleState=="on"}}' bindchange="switchChange" class="float-right" />
+		</view>
+		<view class="edit-title clearfix">
+            <text class="float-left edit-text edit-type">日涨幅高于</text>
+            <input type="number" placeholder="0.00" name="" disabled='{{warningData.pxchangerategeState=="off"}}' value="{{warningData.pxchangeratege}}" class="edit-input"/><text class="float-left edit-text">元</text>
+            <switch checked='{{warningData.pxchangerategeState=="on"}}' bindchange="switchChange" class="float-right" />
+		</view>        
+		<view class="edit-title clearfix">
+             <text class="float-left edit-text edit-type">日跌幅高于</text>
+            <input type="number" placeholder="0.00" name="" disabled='{{warningData.pxchangerateleState=="off"}}' value="{{warningData.pxchangeratele}}" class="edit-input"/><text class="float-left edit-text">元</text>
+            <switch checked='{{warningData.pxchangerateleState=="on"}}' bindchange="switchChange" class="float-right" />
+		</view>
+	</view>
+</view>
+<view class="bottom-section">
+	<button class="btn" bindtap="saveWarning">保存</button>
+</view>

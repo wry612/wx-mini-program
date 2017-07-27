@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="page-header">
+    <view class="funds-section">
+        <view class="funds-item clearfix"><text class="funds-name">普洱指数：</text><text class="funds-value">{{funds.lastPx}}</text></view>
+        <view class="funds-item clearfix"><text class="funds-name">涨跌幅：</text><text class="funds-value">{{funds.pxChangeRate}}%</text>
+        <text class="funds-name">成交额：</text><text class="funds-value">{{funds.businessBalance}}</text></view>
+    </view>
+    <view class="list-header clearfix">
+        <view class="header-name float-left" bindtap="setSort">
+            <text>{{listHeader.name}}</text><image class="sort" src="../images/{{sortImg}}"></image>
+        </view>
+        <view class="header-rate float-right" bindtap="setSort">
+            <text>{{listHeader.rate}}</text><image class="sort" src="../images/{{sortImg}}"></image>
+        </view>
+        <view class="header-price float-right">
+            <text>{{listHeader.price}}</text>
+        </view>     
+    </view>
+</view>
+
+<view class="container">
+    <scroll-view scroll-y="true">
+        <navigator url="../quotation/quotation">
+            <view class="add-goods" hidden="{{haveZx}}">
+                <image src="../images/icon-add-big.png" class="zxImg"></image>
+            </view>
+        </navigator>
+       <navigator url="../quotation-details/quotation-details?prodCode={{item.prodCode}}" wx:for="{{quotations}}" class="page-body" >
+            <view class="list-item clearfix" hidden="{{!haveZx}}">
+                <view class="header-name float-left">
+                    <view>{{item.prodName}}</view>
+                    <view class="font-small">{{item.prodCode}}</view>
+                </view>  
+                <view class="header-rate float-right rate-up" wx:if="{{item.pxChange>0}}">{{item.pxChangeRate}}</view>     
+                <view class="header-rate float-right rate-down" wx:elif="{{item.pxChange<0}}">{{item.pxChangeRate}}</view>
+                <view class="header-rate float-right rate-zero" wx:else>{{item.pxChangeRate}}</view>  
+                <view class="header-price float-right price-up" wx:if="{{item.pxChange>0}}">{{item.lastPx}}</view>     
+                <view class="header-price float-right price-down" wx:elif="{{item.pxChange<0}}">{{item.lastPx}}</view>
+                <view class="header-price float-right price-zero" wx:else>{{item.lastPx}}</view>     
+            </view>
+        </navigator>
+    </scroll-view>
+</view>

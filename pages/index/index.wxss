@@ -1,0 +1,105 @@
+/**index.wxss**/
+.container .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-header{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1;
+}
+.funds-section{
+  padding:0 0.5rem 0.4rem;
+  color: #fff;
+  text-align: left;
+  background: #bd4745;
+}
+.funds-item{
+  padding:0.1rem 0;
+}
+.funds-name{
+  float: left;
+  width:25%;
+}
+.funds-value{
+  float: left;
+  width:25%;
+}
+.list-header{
+  padding:0.5rem;
+  font-size:16px;
+  background: #fff;
+}
+.sort{
+  width:0.853rem;
+  height:0.853rem;
+}
+.header-name{
+  width:56.56%;
+  text-align: left;
+}
+.header-price{
+  text-align: left;
+  width:22.42%;
+}
+.header-rate{
+  text-align: right;
+  width:21.02%;
+}
+.page-body{
+  background: #fff;
+}
+.list-item{
+  padding:0.5rem;
+  border-top:1rpx solid #ddd;
+}
+.price-up{
+  color:#ff6060;
+   line-height: 1.875rem;
+}
+.price-down{
+  color:#26b463;
+   line-height: 1.875rem;
+}
+.price-zero{
+  color:#999;
+   line-height: 1.875rem;
+}
+.font-small{
+  color:#999;
+  font-size:12px;
+}
+.rate-up{
+  line-height: 1.875rem;
+    border-radius: 0.15625rem;
+    text-align: center;
+  color:#fff;
+  background:#ff6060;
+}
+.rate-down{
+  line-height: 1.875rem;
+    border-radius: 0.15625rem;
+    text-align: center;
+  color:#fff;
+  background:#26b463;
+}
+.rate-zero{
+  line-height: 1.875rem;
+    border-radius: 0.15625rem;
+    text-align: center;
+  color:#fff;
+  background:#999;
+}
+.add-goods{
+  width: 80%;
+  padding:40rpx 0;
+  margin:20rpx auto;
+  border:4rpx dashed #ccc;
+}
+.zxImg{
+  width:128rpx;
+  height:128rpx;
+}

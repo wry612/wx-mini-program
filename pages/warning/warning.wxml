@@ -1,0 +1,58 @@
+<view class="login-section" hidden="{{loginHidden}}">
+    <view class="form-section">
+        <form bindsubmit="formSubmit">
+            <view class="input-item border-no account-item">
+                <input type="text" placeholder="请输入您的登录账号" name="account" class="input account" id="account" />
+            </view>      
+            <view class="input-item password-item">
+                <input type="password" placeholder="请输入您的登录密码" name="password" class="input password" id="password" />       
+            </view>
+            <view class="input-item code-item" hidden="{{checkHidden}}">
+                <input type="number" name="code" class="input code" placeholder="请输入验证码" maxlength="4" /><text class="send-code" bindtap="sendCode" id="sendCode">{{sendCode}}</text>
+            </view>
+            <view class="checkbox-item">
+                <label class="checkbox-label" for="checkbox" bindtap="checkChange" namename="checkbox">
+                    <checkbox value="{{checkbox.name}}" class="checkbox" checked="{{checkbox.checked}}" id="checkbox" />{{checkbox.value}}
+                </label>
+            </view>
+            <view class="button-item" hidden="{{!checkHidden}}">
+                <button class="btn" size="default" formType="submit">{{loginText}}</button>
+            </view>
+            <view class="button-item" hidden="{{checkHidden}}">
+                <button class="btn" size="default" formType="submit">{{bindText}}</button>
+            </view>  
+        </form>
+    </view>
+    <view class="text-center forget-password">
+        <text>{{forgetPassword}}</text>
+    </view> 
+    <view class="text-center number-text">
+        <text bindtap="phoneCall" >{{numberText}}</text>
+    </view> 
+    <view class="copyright">
+    <view><text>{{company}}</text></view> 
+    <view><text>{{copyright}}</text></view> 
+    <view><text>{{rights}}</text></view> 
+    </view>
+</view>
+<view class="transaction-section" hidden="{{!loginHidden}}">
+    <view wx:for="{{warningList}}" class="transaction-item" wx:key="item.itemId">
+        <view class="transaction-list bt-none clearfix">
+			<view class="item-first">
+				<view class="transaction-title">
+					<text>{{item.itemName}}</text><text> {{item.itemId}}</text>
+				</view>
+				<view class="warning-text clearfix">
+					<text class="text-item" wx:if='{{item.lastpxgeState=="on"}}'>价格低于{{item.lastpxge}}</text>
+					<text class="text-item" wx:if='{{item.lastpxleState=="on"}}'>价格高于{{item.lastpxle}}</text>
+					<text class="text-item" wx:if='{{item.pxchangerategeState=="on"}}'>日涨幅高于{{item.pxchangeratege}}%</text>
+					<text class="text-item" wx:if='{{item.pxchangerateleState=="on"}}'>日跌幅高于{{item.pxchangeratele}}%</text>
+				</view>
+			</view>
+			<view class="float-right operation">
+			    <navigator url="../edit-warning/edit-warning?warnId={{item.itemId}}" class="btn border">修改</navigator>
+                <button class="btn border delete" bindtap="delete" id="{{item.itemId}}" >删除</button>
+			</view>
+		</view>
+    </view>
+</view>

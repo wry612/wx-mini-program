@@ -1,0 +1,168 @@
+.input-item{
+    padding:0.5rem 0.4rem;
+    font-size: 14px;
+    border-top:1px solid #ccc;
+    background:#fff;
+}
+.form-section{
+    padding-top:1rem;
+}
+.border-no{   
+    border-top:none;
+}
+.account-item{
+    background:url(../images/icon-account.png) 0.6rem center no-repeat;
+    background-size:0.8rem 0.8rem;
+}
+.password-item{
+    background:url(../images/icon-password.png) 0.6rem center no-repeat;
+    background-size:0.8rem 0.8rem;
+}
+.code-item{
+    position: relative;
+    background:url(../images/check-code.png) 0.6rem center no-repeat;
+    background-size:0.8rem 0.8rem;
+}
+.input-item{
+    text-align: left;
+    background-color:#fff;
+}
+.input{
+    padding-left:1.2rem;
+}
+.send-code{
+    display: flex;
+    display: -webkit-flex;
+    position: absolute;
+    right:0.5rem;
+    top:0.5rem;
+    height:1.4rem;
+    min-height: 1.4rem;
+    padding:0;
+    margin:0;
+    color:#218ee1;
+    font-size:14px;
+    line-height: 1;
+    align-items: center;
+    border:none;
+    outline: none;
+    box-shadow:none;
+    background-color:#fff;
+    -webkit-appearance: none;
+}
+.checkbox-item{
+    position: relative;
+    display: flex;
+    padding-left:1rem;
+    margin:1rem 0.5rem 1rem;
+    align-items: center;
+    font-size:14px;
+}
+.checkbox{
+    position: absolute;
+    left:0;
+    top:2px;
+}
+.button-item{
+    padding: 0 1rem;
+}
+.forget-password{
+    margin-top:1rem;
+}
+.number-text{
+    margin-top:0.25rem;
+    color:#218ee1;
+}
+.btn{   
+    line-height:inherit;
+    padding:0.3rem 0;
+    margin:0 auto;
+    font-size:14px;
+}
+.copyright{
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+    width: 100%;
+    color: #aaa;
+}
+
+.funds-section{
+    padding:1rem;
+    text-align: left;
+    background: #fff;
+}
+.funds-box{
+    padding:6rpx 0;
+}
+.funds-item{
+    margin-left:30rpx;
+}
+.holding-section {
+    padding: 0.25rem 1rem 0;
+    color: #cccccc;
+    text-align: left;
+    background: #fff;
+}
+.wrap-item{
+    border-bottom:1px solid #ddd;
+}
+.list-title {
+    position: relative;
+    padding: 0.3125rem 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+.holding-list {
+    padding: 0.25rem 0;
+    border-top: 1px solid #ccc;
+}
+.holding-item {
+    float: left;
+    padding-left: 0.2rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.first {
+    width: 32.73%;
+    padding-left: 0;
+}
+.seconed{
+    width: 17.09%;
+}
+.third{
+    width: 19.62%;
+}
+.fourth{
+    float: left;
+    width: 26.56%;
+    padding-left: 0;
+    text-align: right;
+}
+.fifth{
+    float: right;
+    width: 23.62%;
+    padding-left: 0;
+    text-align: right;
+}
+.pay{
+    margin-top:10rpx;
+}
+.holding-title,holding-data{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.holding-title{
+    color:#999;
+}
+.holding-name{
+    color:#333;
+}
+.holding-data{
+    color:#333;
+    position: relative;
+    margin-top: 0.15625rem;  
+}

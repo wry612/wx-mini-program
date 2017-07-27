@@ -1,0 +1,47 @@
+@import "../user-account/user-account.wxss";
+
+.transaction-section{
+    margin-bottom:0.5rem;
+}
+.transaction-item {
+    padding: 0 0.8rem;  
+    color: #cccccc;
+    background: #fff;
+    border-top:1px solid #ccc;
+}
+.transaction-list {
+    display: flex;
+    display: -webkit-flex;
+    padding: 0.5rem 0;
+    color: #999;
+    border-top: 1px solid #ddd;
+    justify-content: flex-start;
+}
+.item-first {
+    width: 80%;
+    text-align: left;
+}
+.transaction-title {
+    color:#333;
+    font-size: 16px;
+}
+.warning-text {
+    margin-top: 0.3rem;
+}
+.text-item{
+    float: left;
+    width: 50%;
+    margin-top: 0.25rem;
+}
+.operation {
+    width: 20%;
+}
+.btn{
+    height: auto;
+    padding:0.3rem 0;
+    font-size:14px;
+    line-height:inherit;
+}
+.delete{
+    margin-top:0.5rem;
+}

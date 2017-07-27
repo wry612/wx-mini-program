@@ -1,0 +1,77 @@
+page{
+    background-color:#fff;
+}
+.warning-section {
+    padding-top: 0.5rem;
+    padding-bottom:1.5rem;
+}
+.warning-goods {
+    padding:0.5rem;
+    font-size:16px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+.search-id {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    color: #999;
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 0.15625rem;
+}
+.quotation{
+    margin-top:0.8rem;
+}
+.quotation-text {
+    display: inline-block;
+    width: 30%;
+    margin-left: 5%;
+    padding: 0.3125rem 0;
+    color: #fff;
+    font-size:14px;
+    text-align: center;
+    border-radius: 0.15625rem;
+    background: #999999;
+}
+.ml0{
+    margin-left:0;
+}
+.edit-wrap{
+    text-align: left;
+}
+.edit-title{
+    padding:1rem 0.5rem;
+    border-bottom:1px solid #ddd;
+}
+.edit-text{
+    line-height:2rem;
+}
+.edit-type{
+    width: 4.5rem;
+}
+.edit-input{
+    float: left;
+    width: 8rem;
+    margin: 0 0.5rem;
+    padding: 0.15rem 0.5rem;
+    color: #999;
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 0.315rem;
+}
+
+.bottom-section{
+    margin-top: 2rem;
+    width:100%;
+    padding-bottom:1rem;
+}
+.btn{
+    width: 90%;
+    line-height: 1.5rem;
+    padding:0.25rem 0;
+    margin:0 auto;
+    font-size:16px;
+}
